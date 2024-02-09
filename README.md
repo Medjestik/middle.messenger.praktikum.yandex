@@ -1,6 +1,6 @@
 ## Описание проекта
 Приложение Web App Chat. Индивидуальный проект от Яндекс практикума. Первый спринт.
-Ссылка на проект: https://sweet-marzipan-ebc009.netlify.app/index.html
+Ссылка на проект: https://papaya-elf-c811ab.netlify.app/
 
 ## Задачи
 1. Нарисованы прототипы главных экранов. 
@@ -22,10 +22,10 @@
 
 ## Ссылки на страницы
 
-- [index](https://sweet-marzipan-ebc009.netlify.app/index.html) — главная страница со ссылками,
-- [login](https://sweet-marzipan-ebc009.netlify.app/pages/login/login.html) — страница авторизации,
-- [registration](https://sweet-marzipan-ebc009.netlify.app/pages/registration/registration.html) — страница регистрации,
-- [chat](https://sweet-marzipan-ebc009.netlify.app/pages/chat/chat.html) — страница с главным окном чата,
-- [profile](https://sweet-marzipan-ebc009.netlify.app/pages/profile/profile.html) — страница профиль пользователя,
-- [404](https://sweet-marzipan-ebc009.netlify.app/pages/404/404.html) — страница с ошибкой 404,
-- [500](https://sweet-marzipan-ebc009.netlify.app/pages/500/500.html) — страница с ошибкой 500.
+- [index](https://papaya-elf-c811ab.netlify.app/index.html) — главная страница со ссылками,
+- [login](https://papaya-elf-c811ab.netlify.app/pages/login/login.html) — страница авторизации,
+- [registration](https://papaya-elf-c811ab.netlify.app/pages/registration/registration.html) — страница регистрации,
+- [chat](https://papaya-elf-c811ab.netlify.app/pages/chat/chat.html) — страница с главным окном чата,
+- [profile](https://papaya-elf-c811ab.netlify.app/pages/profile/profile.html) — страница профиль пользователя,
+- [404](https://papaya-elf-c811ab.netlify.app/pages/404/404.html) — страница с ошибкой 404,
+- [500](https://papaya-elf-c811ab.netlify.app/pages/500/500.html) — страница с ошибкой 500.
