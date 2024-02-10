@@ -10,11 +10,13 @@ const loginData = {
         caption: 'Логин',
         type: 'text',
         id: 'login-input-login',
+        name: 'login',
       },
       {
         caption: 'Пароль',
         type: 'password',
         id: 'login-input-password',
+        name: 'password',
       },
     ],
     buttons: [

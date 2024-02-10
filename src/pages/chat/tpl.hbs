@@ -4,7 +4,7 @@
       <div class='chat__info'>
         <div class='chat__user'>
           {{#if user.avatar.isLoaded}}
-          <img class='chat__info-avatar' src={{ user.avatar.link }} alt='avatar'>
+          <img class='chat__info-avatar' src={{ user.avatar.link }} alt='Аватар'>
           {{else}}
           <div class='chat__info-avatar'></div>
           {{/if}}
@@ -46,7 +46,7 @@
       {{{menuButton}}}
     </section>
     <section class='chat__messages'>
-      <img class='chat__img' src={{img}}>
+      <img class='chat__img' src={{img}} alt='Изображение чата'>
     </section>
   </main>
 </div>
