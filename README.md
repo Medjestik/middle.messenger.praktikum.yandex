@@ -1,4 +1,31 @@
 ## Описание проекта
 Приложение Web App Chat. Индивидуальный проект от Яндекс практикума. Первый спринт.
 Ссылка на проект: https://papaya-elf-c811ab.netlify.app/
-Ссылка на PR: https://github.com/Medjestik/middle.messenger.praktikum.yandex/pull/4
+
+## Задачи
+1. Нарисованы прототипы главных экранов. 
+2. Проект собирается с помощью сборщика Vite.
+3. Все страницы сверстаны с помощью шаблонизатора Handlebars.
+4. Настроен Express-сервер с раздачей статики.
+5. Настроен автодеплой проекта на Netlify.
+
+## Прототипы главных экранов
+Так как figma стала платной экраны нарисованы в другом средстве и экспортированы в формате png. 
+Они находятся в папке ui в корне проекта.
+
+## Команды для запуска проета
+
+- `npm install` — установка зависимостей проекта,
+- `npm run build` — сборка проекта,
+- `npm run dev` — запуск проекта в режиме разработки,
+- `npm run start` — сборка проекта и запуск Express-сервера с раздачей статики на порту 3000.
+
+## Ссылки на страницы
+
+- [index](https://papaya-elf-c811ab.netlify.app/index.html) — главная страница со ссылками,
+- [login](https://papaya-elf-c811ab.netlify.app/pages/login/login.html) — страница авторизации,
+- [registration](https://papaya-elf-c811ab.netlify.app/pages/registration/registration.html) — страница регистрации,
+- [chat](https://papaya-elf-c811ab.netlify.app/pages/chat/chat.html) — страница с главным окном чата,
+- [profile](https://papaya-elf-c811ab.netlify.app/pages/profile/profile.html) — страница профиль пользователя,
+- [404](https://papaya-elf-c811ab.netlify.app/pages/404/404.html) — страница с ошибкой 404,
+- [500](https://papaya-elf-c811ab.netlify.app/pages/500/500.html) — страница с ошибкой 500.
