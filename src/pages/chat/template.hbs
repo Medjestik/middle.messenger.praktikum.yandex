@@ -1,0 +1,45 @@
+<div class='chat__menu'>
+  <header class='chat__header'>
+    <div class='chat__info'>
+      <div class='chat__user'>
+        {{{avatar}}}
+        <h2 class='chat__user-name'>{{ user.displayName }}</h2>
+      </div>
+      {{{profileButton}}}
+    </div>
+    {{{search}}}
+  </header>
+  <nav class='chat__nav'>
+    <ul class='chat__list'>
+      {{{chats}}}
+    </ul>
+  </nav>
+</div>
+<div class='chat__main'>
+  <div class='chat__main-header'>
+    {{#if isShowChat}}
+      <div class='chat__user'>
+        {{{chatAvatar}}}
+        <h3 class='chat__user-name'>{{currentChat.name}}</h3>
+      </div>
+    {{else}}
+      <div></div>
+    {{/if}}
+    {{{menuButton}}}
+  </div>
+  <div class='chat__messages'>
+    {{#if isShowChat}}
+      <span class='chat__main-text chat__main-text_type_empty'>Список сообщений..</span>
+    {{else}}
+      <img class='chat__img' src={{image}} alt='Изображение чата'>
+    {{/if}}
+  </div>
+  <div class='chat__main-footer'>
+    {{#if isShowChat}}
+      {{{attachButton}}}
+      {{{chatForm}}}
+    {{else}}
+      <span class='chat__main-text chat__main-text_type_empty'>Выберите чат чтобы отправить сообщение..</span>
+    {{/if}}
+  </div>
+</div>

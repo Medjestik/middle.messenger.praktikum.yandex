@@ -1,0 +1,71 @@
+.avatar {
+	margin: 0;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  flex-shrink: 0;
+	position: relative;
+	border-radius: 50%;
+	transition: all .3s ease-in-out;
+	pointer-events: none;
+	user-select: none;
+
+	&_action_edit {
+		pointer-events: all;
+		user-select: all;
+
+		&:hover {
+			cursor: pointer;
+			opacity: .7;
+		}
+
+		&-stub &-stub__icon {
+			display: block;
+		}
+	}
+
+  &_size_small {
+		width: 40px;
+		height: 40px;
+	}
+
+  &_size_medium {
+		width: 56px;
+		height: 56px;
+	}
+
+	&_size_large {
+		width: 130px;
+		height: 130px;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	&-stub {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background-color: var(--background-element-color);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&__icon {
+			display: none;
+			width: 44px;
+			height: 44px;
+			background-image: url('../../../static/icons/image.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+}

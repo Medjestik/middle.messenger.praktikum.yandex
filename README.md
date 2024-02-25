@@ -1,16 +1,16 @@
 ## Описание проекта
-Приложение Web App Chat. Индивидуальный проект от Яндекс практикума. Первый спринт.
+Приложение Web App Chat. Индивидуальный проект от Яндекс практикума. Второй спринт.
 Ссылка на проект: https://papaya-elf-c811ab.netlify.app/
 
 ## Задачи
-1. Нарисованы прототипы главных экранов. 
-2. Проект собирается с помощью сборщика Vite.
-3. Все страницы сверстаны с помощью шаблонизатора Handlebars.
-4. Настроен Express-сервер с раздачей статики.
-5. Настроен автодеплой проекта на Netlify.
+1. Внедрен TypeScript.
+2. Реализован компонентный подход.
+3. Добавлена валидация форм.
+4. Добавлены инструменты проверки кода ESLint и Stylelint.
+5. Добавлен класс для работы с запросами.
 
 ## Прототипы главных экранов
-Так как figma стала платной экраны нарисованы в другом средстве и экспортированы в формате png. 
+Так как figma стала платной экраны нарисованы в другом средстве и экспортированы в формате png.
 Они находятся в папке ui в корне проекта.
 
 ## Команды для запуска проета
@@ -22,10 +22,10 @@
 
 ## Ссылки на страницы
 
-- [index](https://papaya-elf-c811ab.netlify.app/index.html) — главная страница со ссылками,
-- [login](https://papaya-elf-c811ab.netlify.app/pages/login/login.html) — страница авторизации,
-- [registration](https://papaya-elf-c811ab.netlify.app/pages/registration/registration.html) — страница регистрации,
-- [chat](https://papaya-elf-c811ab.netlify.app/pages/chat/chat.html) — страница с главным окном чата,
-- [profile](https://papaya-elf-c811ab.netlify.app/pages/profile/profile.html) — страница профиль пользователя,
-- [404](https://papaya-elf-c811ab.netlify.app/pages/404/404.html) — страница с ошибкой 404,
-- [500](https://papaya-elf-c811ab.netlify.app/pages/500/500.html) — страница с ошибкой 500.
+- [index](https://papaya-elf-c811ab.netlify.app/index.html) — главная страница с ссылками,
+- [login](https://papaya-elf-c811ab.netlify.app/login) — страница авторизации,
+- [registration](https://papaya-elf-c811ab.netlify.app/registration) — страница регистрации,
+- [chat](https://papaya-elf-c811ab.netlify.app/chat) — страница с главным окном чата,
+- [profile](https://papaya-elf-c811ab.netlify.app/profile) — страница профиль пользователя,
+- [404](https://papaya-elf-c811ab.netlify.app/404) — страница с ошибкой 404,
+- [500](https://papaya-elf-c811ab.netlify.app/500) — страница с ошибкой 500.
