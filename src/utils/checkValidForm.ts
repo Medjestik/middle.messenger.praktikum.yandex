@@ -1,5 +1,5 @@
-import IFormField from '../components/form/formField/interface.ts';
-import checkValidInput from './checkValidInput.ts';
+import IFormField from '../components/form/formField/interface';
+import checkValidInput from './checkValidInput';
 
 function checkValidForm(formObject: { [key: string]: FormDataEntryValue }, fields: IFormField[] | undefined): boolean {
   if (fields !== undefined) {

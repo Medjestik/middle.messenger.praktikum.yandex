@@ -1,7 +1,7 @@
-import Component from '../../services/Component.ts';
+import Component from '../../services/Component';
 import template from './template.hbs?raw';
 import './style.scss';
-import IIconButton from './interface.ts';
+import IIconButton from './interface';
 
 export default class IconButton extends Component {
   constructor(props: IIconButton) {

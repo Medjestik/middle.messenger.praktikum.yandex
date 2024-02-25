@@ -1,15 +1,15 @@
-import Component from '../../services/Component.ts';
+import Component from '../../services/Component';
 import template from './template.hbs?raw';
 import './style.scss';
-import FormTitle from './formTitle/index.ts';
-import FormField from './formField/index.ts';
-import FormButton from './formButton/index.ts';
-import Link from '../link/index.ts';
-import FormError from './formError/index.ts';
-import IForm from './interface.ts';
-import IFormField from './formField/interface.ts';
-import IFormButton from './formButton/interface.ts';
-import checkValidForm from '../../utils/checkValidForm.ts';
+import FormTitle from './formTitle/index';
+import FormField from './formField/index';
+import FormButton from './formButton/index';
+import Link from '../link/index';
+import FormError from './formError/index';
+import IForm from './interface';
+import IFormField from './formField/interface';
+import IFormButton from './formButton/interface';
+import checkValidForm from '../../utils/checkValidForm';
 
 export default class Form extends Component {
   constructor(props: IForm) {

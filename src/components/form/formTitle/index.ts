@@ -1,6 +1,6 @@
-import Component from '../../../services/Component.ts';
+import Component from '../../../services/Component';
 import template from './template.hbs?raw';
-import IFormTitle from './interface.ts';
+import IFormTitle from './interface';
 
 export default class FormTitle extends Component {
   constructor(props: IFormTitle) {

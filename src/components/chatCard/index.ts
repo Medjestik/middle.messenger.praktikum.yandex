@@ -1,9 +1,9 @@
-import Component from '../../services/Component.ts';
+import Component from '../../services/Component';
 import template from './template.hbs?raw';
 import './style.scss';
-import IChatCard from './interface.ts';
-import Avatar from '../avatar/index.ts';
-import convertDate from '../../utils/convertDate.ts';
+import IChatCard from './interface';
+import Avatar from '../avatar/index';
+import convertDate from '../../utils/convertDate';
 
 export default class ChatCard extends Component {
   constructor(props: IChatCard) {

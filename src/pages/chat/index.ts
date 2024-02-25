@@ -1,12 +1,12 @@
-import Component from '../../services/Component.ts';
+import Component from '../../services/Component';
 import template from './template.hbs?raw';
 import './style.scss';
-import data from './data.ts';
-import Avatar from '../../components/avatar/index.ts';
-import IconButton from '../../components/iconButton/index.ts';
-import Search from '../../components/search/index.ts';
-import ChatCard from '../../components/chatCard/index.ts';
-import ChatForm from '../../components/chatForm/index.ts';
+import data from './data';
+import Avatar from '../../components/avatar/index';
+import IconButton from '../../components/iconButton/index';
+import Search from '../../components/search/index';
+import ChatCard from '../../components/chatCard/index';
+import ChatForm from '../../components/chatForm/index';
 
 export default class Chat extends Component {
   constructor(props: Record<string, any>) {

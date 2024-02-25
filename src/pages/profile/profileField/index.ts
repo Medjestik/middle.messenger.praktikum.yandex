@@ -1,6 +1,6 @@
-import Component from '../../../services/Component.ts';
+import Component from '../../../services/Component';
 import template from './template.hbs?raw';
-import IFormField from './interface.ts';
+import IFormField from './interface';
 
 export default class ProfileField extends Component {
   constructor(props: IFormField) {

@@ -1,6 +1,6 @@
 import Handlebars from 'handlebars';
 import { v4 as makeUUID } from 'uuid';
-import EventBus from './EventBus.ts';
+import EventBus from './EventBus';
 
 export type Props = Record<string, any>;
 

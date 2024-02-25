@@ -1,9 +1,9 @@
-import Component from '../../services/Component.ts';
+import Component from '../../services/Component';
 import template from './template.hbs?raw';
 import './style.scss';
-import data from './data.ts';
-import Avatar from '../../components/avatar/index.ts';
-import ProfileField from './profileField/index.ts';
+import data from './data';
+import Avatar from '../../components/avatar/index';
+import ProfileField from './profileField/index';
 
 export default class Profile extends Component {
   constructor(props: Record<string, any>) {

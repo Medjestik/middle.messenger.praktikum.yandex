@@ -1,8 +1,8 @@
-import Component from '../../services/Component.ts';
+import Component from '../../services/Component';
 import template from './template.hbs?raw';
 import './style.scss';
-import data from './data.ts';
-import Form from '../../components/form/index.ts';
+import data from './data';
+import Form from '../../components/form/index';
 
 export default class Registration extends Component {
   constructor(props: Record<string, any>) {

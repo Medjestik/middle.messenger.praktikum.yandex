@@ -1,8 +1,8 @@
-import Component from '../../../services/Component.ts';
+import Component from '../../../services/Component';
 import template from './template.hbs?raw';
-import IFormField from './interface.ts';
-import FormInput from '../formInput/index.ts';
-import checkValidInput from '../../../utils/checkValidInput.ts';
+import IFormField from './interface';
+import FormInput from '../formInput/index';
+import checkValidInput from '../../../utils/checkValidInput';
 
 export default class FormField extends Component {
   constructor(props: IFormField) {

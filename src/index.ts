@@ -1,12 +1,12 @@
 import './styles/style.scss';
-import RenderDOM from './services/RenderDOM.ts';
-import Main from './pages/main/index.ts';
-import Registration from './pages/registration/index.ts';
-import Login from './pages/login/index.ts';
-import Chat from './pages/chat/index.ts';
-import Profile from './pages/profile/index.ts';
-import NotFoundPage from './pages/404/index.ts';
-import InternalErrorPage from './pages/500/index.ts';
+import RenderDOM from './services/RenderDOM';
+import Main from './pages/main/index';
+import Registration from './pages/registration/index';
+import Login from './pages/login/index';
+import Chat from './pages/chat/index';
+import Profile from './pages/profile/index';
+import NotFoundPage from './pages/404/index';
+import InternalErrorPage from './pages/500/index';
 
 const appElement = document.querySelector('.app');
 

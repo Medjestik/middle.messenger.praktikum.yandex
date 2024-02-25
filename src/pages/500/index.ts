@@ -1,7 +1,7 @@
-import Component from '../../services/Component.ts';
+import Component from '../../services/Component';
 import template from './template.hbs?raw';
 import './style.scss';
-import ErrorPage from '../../components/errorPage/index.ts';
+import ErrorPage from '../../components/errorPage/index';
 import img from '../../images/500.svg';
 
 export default class InternalErrorPage extends Component {

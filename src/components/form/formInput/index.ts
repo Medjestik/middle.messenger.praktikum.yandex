@@ -1,6 +1,6 @@
-import Component from '../../../services/Component.ts';
+import Component from '../../../services/Component';
 import template from './template.hbs?raw';
-import IFormInput from './interface.ts';
+import IFormInput from './interface';
 
 export default class FormInput extends Component {
   constructor(props: IFormInput) {

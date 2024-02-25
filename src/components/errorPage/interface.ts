@@ -1,4 +1,4 @@
-import ILink from '../link/interface.ts';
+import ILink from '../link/interface';
 
 interface IErrorPage {
   title?: string,
