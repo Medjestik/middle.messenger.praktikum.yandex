@@ -17,6 +17,10 @@ const data = {
       url: '/profile',
     },
     {
+      text: 'Редактирование данных',
+      url: '/edit',
+    },
+    {
       text: 'Ошибка 404',
       url: '/404',
     },

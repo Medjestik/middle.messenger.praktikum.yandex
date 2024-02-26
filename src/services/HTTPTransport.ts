@@ -22,14 +22,16 @@ function queryStringify(data: Record<string, any>): string {
   return keys.reduce((result, key, index) => `${result}${key}=${data[key]}${index < keys.length - 1 ? '&' : ''}`, '?');
 }
 
+type HTTPMethod = (url: string, options?: Options | {}) => Promise<unknown>
+
 class HTTPTransport {
-  get = (url: string, options = {}) => this.request(url, { ...options, method: METHOD.GET });
+  get: HTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHOD.GET });
 
-  post = (url: string, options = {}) => this.request(url, { ...options, method: METHOD.POST });
+  post: HTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHOD.POST });
 
-  put = (url: string, options = {}) => this.request(url, { ...options, method: METHOD.PUT });
+  put: HTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHOD.PUT });
 
-  delete = (url: string, options = {}) => this.request(url, { ...options, method: METHOD.PUT });
+  delete: HTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHOD.PUT });
 
   request = (url: string, options: Options) => {
     const {

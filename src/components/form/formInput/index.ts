@@ -10,6 +10,7 @@ export default class FormInput extends Component {
       id,
       name,
       type,
+      value,
       required,
     } = props;
 
@@ -18,6 +19,7 @@ export default class FormInput extends Component {
       id,
       name,
       type,
+      value,
       required: required ? 'required' : undefined,
     };
   }

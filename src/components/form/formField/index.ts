@@ -11,6 +11,7 @@ export default class FormField extends Component {
       id,
       name,
       type,
+      value,
       validation,
     } = props;
 
@@ -20,6 +21,7 @@ export default class FormField extends Component {
       id,
       name,
       type,
+      value,
       required: validation?.required,
       events: {
         blur: (e: Event) => {

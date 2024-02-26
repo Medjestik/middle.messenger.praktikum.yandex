@@ -5,6 +5,7 @@ import Registration from './pages/registration/index';
 import Login from './pages/login/index';
 import Chat from './pages/chat/index';
 import Profile from './pages/profile/index';
+import Edit from './pages/edit/index';
 import NotFoundPage from './pages/404/index';
 import InternalErrorPage from './pages/500/index';
 
@@ -28,6 +29,9 @@ if (appElement) {
       break;
     case '/profile':
       RenderDOM('.app', new Profile({ user: userContext }));
+      break;
+    case '/edit':
+      RenderDOM('.app', new Edit({}));
       break;
     case '/404':
       RenderDOM('.app', new NotFoundPage({}));

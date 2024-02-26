@@ -2,6 +2,7 @@ interface IFormInput {
   type?: string,
   id?: string,
   name?: string,
+  value?: string,
   required?: boolean,
   attr?: { [key: string]: string | undefined },
   events?: {
