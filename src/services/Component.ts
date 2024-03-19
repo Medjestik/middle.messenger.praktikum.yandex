@@ -225,10 +225,12 @@ class Component {
 
     return new Proxy(props, {
       set(target: Props, prop: string, value: unknown) {
-        const oldProps = { ...target };
-        target[prop] = value;
+        if (target[prop] !== value) {
+          const oldProps = { ...target };
+          target[prop] = value;
+          self.eventBus().emit(Component.EVENTS.FLOW_CDU, oldProps, { ...target });
+        }
 
-        self.eventBus().emit(Component.EVENTS.FLOW_CDU, oldProps, { ...target });
         return true;
       },
       deleteProperty() {
@@ -254,6 +256,13 @@ class Component {
     const content = this.getContent();
     if (content) {
       content.style.display = 'none';
+    }
+  }
+
+  remove() {
+    const content = this.getContent();
+    if (content && content.parentNode) {
+      content.parentNode.removeChild(content);
     }
   }
 }

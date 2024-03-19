@@ -7,7 +7,8 @@ interface IFormField {
   value?: string,
   validation?: {
     required: boolean,
-    pattern: RegExp,
+    pattern?: RegExp,
+    type?: string,
     errorText: string,
   }
   attr?: { [key: string]: string | undefined },

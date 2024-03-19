@@ -2,15 +2,17 @@ import Component from '../../services/Component';
 import template from './template.hbs?raw';
 import './style.scss';
 import IAvatar from './interface';
-import checkValidUrl from '../../utils/checkValidUrl';
+import BaseUrlApi from '../../config/config';
 
 export default class Avatar extends Component {
   constructor(props: IAvatar) {
     super('div', props);
     const { url, size, isEdit } = props;
-
     if (typeof url === 'string') {
-      this.props.isValid = checkValidUrl(url);
+      if (url.length > 0) {
+        this.props.isValid = true;
+        this.props.avatarLink = `${BaseUrlApi}/resources${url}`;
+      }
     } else {
       this.props.url = '';
     }
@@ -21,7 +23,9 @@ export default class Avatar extends Component {
   componentDidUpdate(oldProps: IAvatar, newProps: IAvatar) {
     if (oldProps.url !== newProps.url) {
       if (typeof newProps.url === 'string') {
-        this.props.isValid = checkValidUrl(newProps.url);
+        if (newProps.url.length > 0) {
+          this.setProps({ isValid: true, avatarLink: `${BaseUrlApi}/resources${newProps.url}` });
+        }
       } else {
         this.props.url = '';
       }

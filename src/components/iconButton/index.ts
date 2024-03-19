@@ -7,7 +7,11 @@ export default class IconButton extends Component {
   constructor(props: IIconButton) {
     super('button', props);
 
-    const { icon, type, size } = props;
+    const {
+      icon,
+      type,
+      size,
+    } = props;
 
     this.props.attr = { class: `icon-button icon-button_type_${icon} icon-button_size_${size}`, type };
   }
