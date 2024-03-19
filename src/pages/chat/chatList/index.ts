@@ -11,12 +11,14 @@ export default class ChatList extends Component {
     super('ul', props);
     const { chats } = props;
     this.props.attr = { class: 'chat__list' };
-    this.props.chats = chats;
+    this.props.chats = props.chats;
     this.lists.cards = this.renderCards(chats);
   }
 
   componentDidUpdate(oldProps: Record<string, any>, newProps: Record<string, any>) {
     if (oldProps.chats && newProps.chats) {
+      console.log(oldProps);
+      console.log(newProps);
       const addedChats = diffArrays<IChat>(oldProps.chats, newProps.chats, 'id').added;
       const removedChats = diffArrays<IChat>(oldProps.chats, newProps.chats, 'id').removed;
 

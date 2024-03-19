@@ -12,7 +12,6 @@ import CreateNewChatPopup from '../../components/popup/createNewChatPopup';
 import ConfirmRemovePopup from '../../components/popup/removeChatPopup';
 import router from '../../router';
 import isEqual from '../../utils/isEqual';
-import ChatController from '../../controllers/ChatController';
 
 export default class Chat extends Component {
   constructor(propsAndChildren: Record<string, any>) {
@@ -104,7 +103,7 @@ export default class Chat extends Component {
     });
     this.children.chatForm = new ChatForm({});
 
-    this.children.chatNav = new ChatList({
+    this.children.chatList = new ChatList({
       chats,
       onClick: (elem) => {
         this.setProps({ currentChat: elem });
@@ -171,9 +170,7 @@ export default class Chat extends Component {
       {
         icon: 'add',
         text: 'Получить пользователей',
-        onClick: () => {
-          ChatController.getChatUsers(this.props.currentChat.id);
-        },
+        onClick: () => {},
       },
       {
         icon: 'add',
