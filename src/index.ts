@@ -57,7 +57,9 @@ window.addEventListener('DOMContentLoaded', async () => {
       router.go(RouterPath.notFound);
     } else {
       if (Store.getState().isLoggedIn && isProtectedRoute) {
-        router.go(RouterPath.chat);
+        if (window.location.pathname !== RouterPath.profile) {
+          router.go(RouterPath.chat);
+        }
       }
       if (!Store.getState().isLoggedIn && isProtectedRoute) {
         router.go(RouterPath.login);
