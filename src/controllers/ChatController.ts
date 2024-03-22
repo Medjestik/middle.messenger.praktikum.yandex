@@ -50,7 +50,7 @@ class ChatController {
         this.getChats();
       })
       .catch((error) => {
-        throw new Error(`Ошибка при создании чата: ${error.message}`);
+        console.error(`Ошибка при создании чата: ${error.message}`);
       });
   }
 
@@ -60,7 +60,7 @@ class ChatController {
         this.getChats();
       })
       .catch((error) => {
-        throw new Error(`Ошибка при удалении чата: ${error.message}`);
+        console.error(`Ошибка при удалении чата: ${error.message}`);
       });
   }
 
@@ -80,7 +80,7 @@ class ChatController {
         return chatResult;
       })
       .catch((error) => {
-        throw new Error(`Ошибка при изменении аватара чата: ${error.message}`);
+        console.error(`Ошибка при изменении аватара чата: ${error.message}`);
       });
   }
 
@@ -97,7 +97,7 @@ class ChatController {
     return ChatApi.addUsersToChat(data)
       .then(() => {})
       .catch((error) => {
-        throw new Error(`Ошибка при добавлении пользователей в чат: ${error.message}`);
+        console.error(`Ошибка при добавлении пользователей в чат: ${error.message}`);
       });
   }
 
@@ -105,7 +105,7 @@ class ChatController {
     return ChatApi.removeUsersFromChat(data)
       .then(() => {})
       .catch((error) => {
-        throw new Error(`Ошибка при удалении пользователей из чата: ${error.message}`);
+        console.error(`Ошибка при удалении пользователей из чата: ${error.message}`);
       });
   }
 

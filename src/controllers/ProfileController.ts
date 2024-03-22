@@ -9,7 +9,7 @@ class ProfileController {
         Store.set('user', res);
       })
       .catch((error) => {
-        throw new Error(`Ошибка при изменении информации: ${error.message}`);
+        console.error(`Ошибка при изменении информации: ${error.message}`);
       });
   }
 
@@ -18,7 +18,7 @@ class ProfileController {
       .then(() => {
       })
       .catch((error) => {
-        throw new Error(`Ошибка при изменении пароля: ${error.message}`);
+        console.error(`Ошибка при изменении пароля: ${error.message}`);
       });
   }
 
@@ -28,7 +28,7 @@ class ProfileController {
         Store.set('user', res);
       })
       .catch((error) => {
-        throw new Error(`Ошибка при изменении аватара: ${error.message}`);
+        console.error(`Ошибка при изменении аватара: ${error.message}`);
       });
   }
 
@@ -36,7 +36,7 @@ class ProfileController {
     return ProfileApi.searchUsers(data)
       .then((res) => res)
       .catch((error) => {
-        throw new Error(`Ошибка при поиске пользователей: ${error.message}`);
+        console.error(`Ошибка при поиске пользователей: ${error.message}`);
       });
   }
 }

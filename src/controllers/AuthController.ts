@@ -17,7 +17,7 @@ class AuthController {
         router.go('/messenger');
       })
       .catch((error) => {
-        throw new Error(`Ошибка при регистрации: ${error.message}`);
+        console.error(`Ошибка при регистрации: ${error.message}`);
       });
   }
 
@@ -33,7 +33,7 @@ class AuthController {
         router.go('/messenger');
       })
       .catch((error) => {
-        throw new Error(`Ошибка при авторизации: ${error.message}`);
+        console.error(`Ошибка при авторизации: ${error.message}`);
       });
   }
 
@@ -56,7 +56,7 @@ class AuthController {
         router.go('/');
       })
       .catch((error) => {
-        throw new Error(`Ошибка при выходе из приложения: ${error.message}`);
+        console.error(`Ошибка при выходе из приложения: ${error.message}`);
       });
   }
 }

@@ -25,22 +25,23 @@ class MessagesController {
   getOldMessages(id: number) {
     const socket = this.sockets.get(id);
     if (!socket) {
-      throw new Error('Чат не подключен');
+      console.error('Чат не подключен');
+    } else {
+      socket.send({ type: 'get old', content: '0' });
     }
-    socket.send({ type: 'get old', content: '0' });
   }
 
   sendMessage(id: number, message: string) {
     const socket = this.sockets.get(id);
 
     if (!socket) {
-      throw new Error('Чат не подключен');
+      console.error('Чат не подключен');
+    } else {
+      socket.send({
+        type: 'message',
+        content: message,
+      });
     }
-
-    socket.send({
-      type: 'message',
-      content: message,
-    });
   }
 
   closeAll() {
