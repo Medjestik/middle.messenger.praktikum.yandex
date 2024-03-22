@@ -1,0 +1,17 @@
+<div class='chat-card__container'>
+  {{{avatar}}}
+  <div class='chat-card__info'>
+    <div class='chat-card__header'>
+      <h4 class='chat-card__title'>{{name}}</h4>
+      <span class='chat-card__date'>{{date}}</span>
+    </div>
+    <div class='chat-card__main'>
+      {{#if message.isMyMessage}}
+        <p class='chat-card__text'><span class='chat-card__text_weight_bold'>Вы: </span>{{message.text}}</p>
+      {{else}}
+        <p class='chat-card__text'>{{message.text}}</p>
+      {{/if}}
+      <div class='chat-card__count'>{{newMessageCount}}</div>
+    </div>
+  </div>
+</div>
