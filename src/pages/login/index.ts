@@ -18,6 +18,7 @@ export default class Login extends Component {
         password: formObject.password as string,
       };
       AuthController.login(formDataObject);
+      this.children.form.setProps({ title: 'Test' });
     };
 
     this.props.image = image;

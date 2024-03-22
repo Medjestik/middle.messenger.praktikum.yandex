@@ -2,6 +2,7 @@ import AuthAPI from '../api/auth-api';
 import { IAuthRegistration, IAuthLogin } from '../interfaces/IAuthData';
 import router from '../router';
 import Store from '../services/Store';
+import ChatController from './ChatController';
 
 class AuthController {
   public registration(data: IAuthRegistration) {
@@ -9,11 +10,14 @@ class AuthController {
       .then(() => {
         this.getUser();
       })
-      .catch((err) => {
-        console.log(err);
+      .then(() => {
+        ChatController.getChats();
       })
-      .finally(() => {
-
+      .then(() => {
+        router.go('/messenger');
+      })
+      .catch((error) => {
+        throw new Error(`Ошибка при регистрации: ${error.message}`);
       });
   }
 
@@ -22,11 +26,14 @@ class AuthController {
       .then(() => {
         this.getUser();
       })
-      .catch((err) => {
-        console.log(err);
+      .then(() => {
+        ChatController.getChats();
       })
-      .finally(() => {
-
+      .then(() => {
+        router.go('/messenger');
+      })
+      .catch((error) => {
+        throw new Error(`Ошибка при авторизации: ${error.message}`);
       });
   }
 
@@ -36,26 +43,20 @@ class AuthController {
         Store.set('user', res);
         Store.set('isLoggedIn', true);
       })
-      .catch((err) => {
+      .catch(() => {
         Store.set('isLoggedIn', false);
-        console.log(err);
-      })
-      .finally(() => {
-        // Логика, выполняемая после завершения обещания
       });
   }
 
   public logout(): Promise<void> {
     return AuthAPI.logout()
       .then(() => {
+        document.cookie = 'authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         Store.set('isLoggedIn', false);
         router.go('/');
       })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-
+      .catch((error) => {
+        throw new Error(`Ошибка при выходе из приложения: ${error.message}`);
       });
   }
 }

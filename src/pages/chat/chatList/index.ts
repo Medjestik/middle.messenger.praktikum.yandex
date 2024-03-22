@@ -3,6 +3,7 @@ import template from './template.hbs?raw';
 import IChatList from './interface';
 import ChatCard from '../chatCard';
 import { IChat } from '../../../interfaces/IChat';
+import isEqual from '../../../utils/isEqual';
 import diffArrays from '../../../utils/diffArrays';
 import convertDate from '../../../utils/convertDate';
 
@@ -17,8 +18,6 @@ export default class ChatList extends Component {
 
   componentDidUpdate(oldProps: Record<string, any>, newProps: Record<string, any>) {
     if (oldProps.chats && newProps.chats) {
-      console.log(oldProps);
-      console.log(newProps);
       const addedChats = diffArrays<IChat>(oldProps.chats, newProps.chats, 'id').added;
       const removedChats = diffArrays<IChat>(oldProps.chats, newProps.chats, 'id').removed;
 
@@ -32,6 +31,19 @@ export default class ChatList extends Component {
           this.lists.cards.splice(index, 1);
         }
       });
+
+      newProps.chats.forEach((newChat: IChat) => {
+        const oldChatIndex = oldProps.chats.findIndex((oldChat: IChat) => oldChat.id === newChat.id);
+        if (oldChatIndex !== -1) {
+          const oldChat = oldProps.chats[oldChatIndex];
+          if (!isEqual(oldChat, newChat)) {
+            const chatCardIndex = this.lists.cards.findIndex((chatCard: ChatCard) => chatCard.props.id === oldChat.id);
+            if (chatCardIndex !== -1) {
+              this.lists.cards[chatCardIndex] = this.createChatCard(newChat);
+            }
+          }
+        }
+      });
     }
     return true;
   }
@@ -40,7 +52,7 @@ export default class ChatList extends Component {
     const { onClick } = this.props;
     const lastMessage = chat.last_message
       ? {
-        isEmpty: false, owner: false, time: convertDate(chat.last_message.time), content: chat.last_message.content,
+        isEmpty: false, owner: false, time: convertDate(chat.last_message.time ? chat.last_message.time : ''), content: chat.last_message.content,
       }
       : {
         isEmpty: true, owner: false, time: '', content: '',

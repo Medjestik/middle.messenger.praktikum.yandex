@@ -1,5 +1,5 @@
 import ProfileApi from '../api/profile-api';
-import { IProfileUserData, IProfileUserPassword } from '../interfaces/IProfileData';
+import { IProfileUserData, IProfileUserPassword, IProfileSearchUsers } from '../interfaces/IProfileData';
 import Store from '../services/Store';
 
 class ProfileController {
@@ -8,8 +8,8 @@ class ProfileController {
       .then((res) => {
         Store.set('user', res);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        throw new Error(`Ошибка при изменении информации: ${error.message}`);
       });
   }
 
@@ -17,8 +17,8 @@ class ProfileController {
     return ProfileApi.changeUserPassword(data)
       .then(() => {
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        throw new Error(`Ошибка при изменении пароля: ${error.message}`);
       });
   }
 
@@ -27,8 +27,16 @@ class ProfileController {
       .then((res) => {
         Store.set('user', res);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        throw new Error(`Ошибка при изменении аватара: ${error.message}`);
+      });
+  }
+
+  public searchUsers(data: IProfileSearchUsers) {
+    return ProfileApi.searchUsers(data)
+      .then((res) => res)
+      .catch((error) => {
+        throw new Error(`Ошибка при поиске пользователей: ${error.message}`);
       });
   }
 }

@@ -27,6 +27,8 @@ export default class Form extends Component {
       onSubmit,
     } = props;
 
+    this.props.title = props.title;
+
     this.props.attr = { class: 'form', name, novalidate: 'novalidate' };
     this.props.events = {
       submit: (e: SubmitEvent) => {

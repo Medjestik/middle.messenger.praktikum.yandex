@@ -27,9 +27,9 @@
 
     {{{menuButton}}}
   </div>
-  <div class='chat__messages'>
+  <div class='chat__messages scroll'>
     {{#if isShowChat}}
-      <span class='chat__main-text chat__main-text_type_empty'>Список сообщений..</span>
+      {{{messageList}}}
     {{else}}
       <img class='chat__img' src={{stubImage}} alt='Изображение чата'>
     {{/if}}
@@ -49,4 +49,16 @@
 {{/if}}
 {{#if isShowRemoveChatPopup}}
   {{{removeChatPopup}}}
+{{/if}}
+{{#if isShowChangeAvatarPopup}}
+  {{{changeAvatarPopup}}}
+{{/if}}
+{{#if isShowViewChatUsersPopup}}
+  {{{viewUsersPopup}}}
+{{/if}}
+{{#if isShowAddUsersPopup}}
+  {{{addUsersPopup}}}
+{{/if}}
+{{#if isShowRemoveUsersPopup}}
+  {{{removeUsersPopup}}}
 {{/if}}

@@ -28,6 +28,7 @@ export default class Avatar extends Component {
         }
       } else {
         this.props.url = '';
+        this.setProps({ isValid: false, avatarLink: '' });
       }
     }
     return true;

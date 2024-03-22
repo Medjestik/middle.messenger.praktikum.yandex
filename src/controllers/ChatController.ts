@@ -1,18 +1,47 @@
 import ChatApi from '../api/chat-api';
 import Store from '../services/Store';
-import { IChatCreateNew, IChatRemove } from '../interfaces/IChatData';
+import { IUser } from '../interfaces/IUser';
+import { IChat } from '../interfaces/IChat';
+import {
+  IChatCreateNew,
+  IChatRemove,
+  IChatAddUsers,
+  IChatRemoveUsers,
+} from '../interfaces/IChatData';
+import MessageController from './MessageController';
 
 class ChatController {
-  public getChats(): Promise<void> {
-    return ChatApi.getChats()
-      .then((res) => {
-        Store.set('chats', res);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-      });
+  public async getChats() {
+    try {
+      const chats: IChat[] = await ChatApi.getChats() as IChat[];
+      await Promise.all(chats.map(async (chat) => {
+        if (chat.id) {
+          const res = await this.getChatToken(chat.id);
+          if (res) {
+            await MessageController.connect(chat.id, res.token);
+          }
+        }
+      }));
+      Store.set('chats', chats);
+    } catch (error) {
+      console.error('Ошибка при получении чатов');
+    }
+  }
+
+  public setCurrentChat(elem: number) {
+    MessageController.getOldMessages(elem);
+    const { chats } = Store.getState();
+    const findChat = chats.find((chat) => chat.id === elem);
+    const newChats = chats.map((chat) => {
+      if (findChat) {
+        if (chat.id === findChat.id) {
+          return { ...chat, unread_count: 0 };
+        }
+      }
+      return chat;
+    });
+    Store.set('currentChat', findChat);
+    Store.set('chats', newChats);
   }
 
   public createNewChat(data: IChatCreateNew): Promise<void> {
@@ -20,8 +49,8 @@ class ChatController {
       .then(() => {
         this.getChats();
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        throw new Error(`Ошибка при создании чата: ${error.message}`);
       });
   }
 
@@ -30,20 +59,61 @@ class ChatController {
       .then(() => {
         this.getChats();
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        throw new Error(`Ошибка при удалении чата: ${error.message}`);
       });
   }
 
-  public getChatUsers(id: number): Promise<void> {
-    return ChatApi.getChatUsers(id)
+  public changeChatAvatar(data: FormData) {
+    return ChatApi.changeChatAvatar(data)
       .then((res) => {
-        console.log(res);
+        const chatResult = res as IChat;
+        const oldChats = Store.getState().chats;
+        const newChats = oldChats.map((chat) => {
+          if (chat.id === chatResult.id) {
+            return { ...chat, avatar: chatResult.avatar };
+          }
+          return chat;
+        });
+        Store.set('currentChat', chatResult);
+        Store.set('chats', newChats);
+        return chatResult;
       })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
+      .catch((error) => {
+        throw new Error(`Ошибка при изменении аватара чата: ${error.message}`);
+      });
+  }
+
+  public getChatUsers(data: number) {
+    return ChatApi.getChatUsers(data)
+      .then((res) => res as IUser[])
+      .catch((error) => {
+        console.error(`Ошибка при получении пользователей чата: ${error.message}`);
+        return [];
+      });
+  }
+
+  public addUsersToChat(data: IChatAddUsers): Promise<void> {
+    return ChatApi.addUsersToChat(data)
+      .then(() => {})
+      .catch((error) => {
+        throw new Error(`Ошибка при добавлении пользователей в чат: ${error.message}`);
+      });
+  }
+
+  public removeUsersFromChat(data: IChatRemoveUsers): Promise<void> {
+    return ChatApi.removeUsersFromChat(data)
+      .then(() => {})
+      .catch((error) => {
+        throw new Error(`Ошибка при удалении пользователей из чата: ${error.message}`);
+      });
+  }
+
+  public getChatToken(data: number) {
+    return ChatApi.getChatToken(data)
+      .then((res) => res as { token: string })
+      .catch((error) => {
+        console.error(`Ошибка при получении токена: ${error.message}`);
       });
   }
 }

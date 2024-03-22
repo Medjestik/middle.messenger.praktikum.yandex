@@ -1,8 +1,8 @@
 interface IChatCard {
-  id: number,
+  id?: number,
   avatar?: string,
   title?: string,
-  ownerId: number,
+  ownerId?: number,
   lastMessage?: {
     isEmpty?: boolean,
     owner?: boolean,

@@ -14,6 +14,8 @@ function checkValidForm(formObject: { [key: string]: FormDataEntryValue }, field
               isValidField = field.validation.pattern ? checkValidInput(value, field.validation.pattern) && (value === formObject.password) : true;
             } else if (field.name === 'avatar') {
               isValidField = field.validation.pattern ? checkValidInput(value, field.validation.pattern) : true;
+            } else {
+              isValidField = field.validation.pattern ? checkValidInput(value, field.validation.pattern) : true;
             }
             if (!isValidField) {
               isValidForm = false;

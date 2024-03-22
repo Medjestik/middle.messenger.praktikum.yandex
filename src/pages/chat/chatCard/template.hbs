@@ -14,7 +14,9 @@
         {{else}}
           <p class='chat-card__text'>{{lastMessage.content}}</p>
         {{/if}}
-      <div class='chat-card__count'>{{newMessages}}</div>
+        {{#if isShowMessageCount}}
+          <div class='chat-card__count'>{{newMessages}}</div>
+        {{/if}}
       {{/if}}
     </div>
   </div>

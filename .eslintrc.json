@@ -15,6 +15,7 @@
     "no-use-before-define": "off",
     "no-shadow": "off",
     "no-restricted-syntax": "off",
+    "default-param-last": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

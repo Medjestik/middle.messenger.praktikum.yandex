@@ -5,3 +5,13 @@ export interface IChatCreateNew {
 export interface IChatRemove {
   chatId: number
 }
+
+export interface IChatAddUsers {
+  users: number[]
+  chatId: number
+}
+
+export interface IChatRemoveUsers {
+  users: number[]
+  chatId: number
+}

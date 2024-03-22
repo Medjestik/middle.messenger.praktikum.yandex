@@ -11,3 +11,7 @@ export interface IProfileUserPassword {
   oldPassword: string
   newPassword: string
 }
+
+export interface IProfileSearchUsers {
+  login: string
+}

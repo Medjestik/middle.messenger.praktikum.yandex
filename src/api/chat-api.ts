@@ -1,7 +1,12 @@
 import HTTPTransport from '../services/HTTPTransport';
 import BaseAPI from '../services/BaseApi';
 import BaseUrlApi from '../config/config';
-import { IChatCreateNew, IChatRemove } from '../interfaces/IChatData';
+import {
+  IChatCreateNew,
+  IChatRemove,
+  IChatAddUsers,
+  IChatRemoveUsers,
+} from '../interfaces/IChatData';
 
 const chatsAPIInstance = new HTTPTransport(`${BaseUrlApi}/chats`);
 
@@ -18,8 +23,24 @@ class ChatApi extends BaseAPI {
     return chatsAPIInstance.delete('/', { data });
   }
 
-  getChatUsers(id: number) {
-    return chatsAPIInstance.get(`/${id}/users`);
+  changeChatAvatar(data: FormData) {
+    return chatsAPIInstance.put('/avatar', { data });
+  }
+
+  getChatUsers(data: number) {
+    return chatsAPIInstance.get(`/${data}/users`);
+  }
+
+  addUsersToChat(data: IChatAddUsers) {
+    return chatsAPIInstance.put('/users', { data });
+  }
+
+  removeUsersFromChat(data: IChatRemoveUsers) {
+    return chatsAPIInstance.delete('/users', { data });
+  }
+
+  getChatToken(data: number) {
+    return chatsAPIInstance.post(`/token/${data}`);
   }
 }
 

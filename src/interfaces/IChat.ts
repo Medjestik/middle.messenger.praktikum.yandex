@@ -1,12 +1,15 @@
+import { IUser } from './IUser';
+
 export interface IChat {
-  avatar?: string
-  created_by: number
-  id: number
-  last_message?: {
-    time: string
-    id: number
-    content: string
-  };
+  id?: number
   title?: string
+  avatar?: string
   unread_count: number
+  created_by?: number
+  last_message?: {
+    user?: IUser
+    time?: string
+    id?: number
+    content?: string
+  };
 }
