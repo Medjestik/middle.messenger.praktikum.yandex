@@ -1,0 +1,20 @@
+<div class='popup__container popup__container_width_large'>
+  <main class='popup__main'>
+    <h2 class='popup__title'>Просмотр пользователей</h2>
+    {{#if isLoadingUsers}}
+      <div>Загрузка..</div>
+    {{else}}
+      <div class='popup__table'>
+        <div class='popup__table-column'>
+          <h4 class='popup__table-column-title'>Текущие пользователи:</h4>
+          {{{currentUsersList}}}
+        </div>
+        <div class='popup__table-column'>
+          <h4 class='popup__table-column-title'>Удаляемые пользователи:</h4>
+          {{{removedUsersList}}}
+        </div>
+      </div>
+    {{/if}}
+    {{{form}}}
+  </main>
+</div>

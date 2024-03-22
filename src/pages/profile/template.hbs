@@ -1,10 +1,22 @@
 <nav class='profile__nav'>
-  <a class='profile__nav-link' href='/'> </a>
+  {{{btnBack}}}
 </nav>
 <div class='profile__container'>
   {{{avatar}}}
   <h2 class='profile__title'>{{ title }}</h2>
   <ul class='profile__fields'>
     {{{fields}}}
+    {{{editDataField}}}
+    {{{changePasswordField}}}
+    {{{logoutField}}}
   </ul>
 </div>
+{{#if isShowChangeAvatarPopup}}
+  {{{changeAvatarPopup}}}
+{{/if}}
+{{#if isShowEditDataPopup}}
+  {{{editDataPopup}}}
+{{/if}}
+{{#if isShowChangePasswordPopup}}
+  {{{changePasswordPopup}}}
+{{/if}}

@@ -1,0 +1,23 @@
+<div class='chat-card__container'>
+  {{{avatar}}}
+  <div class='chat-card__info'>
+    <div class='chat-card__header'>
+      <h4 class='chat-card__title'>{{title}}</h4>
+      <span class='chat-card__date'>{{lastMessage.time}}</span>
+    </div>
+    <div class='chat-card__main'>
+      {{#if lastMessage.isEmpty}}
+      <p class='chat-card__text chat-card__text_color_grey'>Чат пока пуст..</p>
+      {{else}}
+        {{#if lastMessage.owner}}
+          <p class='chat-card__text'><span class='chat-card__text_weight_bold'>Вы: </span>{{content}}</p>
+        {{else}}
+          <p class='chat-card__text'>{{lastMessage.content}}</p>
+        {{/if}}
+        {{#if isShowMessageCount}}
+          <div class='chat-card__count'>{{newMessages}}</div>
+        {{/if}}
+      {{/if}}
+    </div>
+  </div>
+</div>

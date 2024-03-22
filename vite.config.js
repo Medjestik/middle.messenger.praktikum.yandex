@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import handlebars from 'vite-plugin-handlebars';
 import { resolve } from 'path';
 
 export default defineConfig({
@@ -9,4 +10,7 @@ export default defineConfig({
       input: { index: '/index.html' },
     },
   },
+  plugins: [
+    handlebars({}),
+  ],
 });

@@ -5,8 +5,9 @@ import IFormButton from './interface';
 export default class FormButton extends Component {
   constructor(props: IFormButton) {
     super('button', props);
+    const { color } = this.props;
 
-    this.props.attr = { class: 'form__button' };
+    this.props.attr = { class: `form__button form__button_color_${color}` };
   }
 
   render() {

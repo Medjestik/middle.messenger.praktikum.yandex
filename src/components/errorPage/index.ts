@@ -13,7 +13,8 @@ export default class ErrorPage extends Component {
     if (link !== undefined) {
       this.children.link = new Link({
         text: link.text,
-        attr: { class: 'link mt-20 fs-20', href: link.url },
+        url: link.url,
+        attr: { class: 'link mt-20 fs-20' },
       });
     }
 

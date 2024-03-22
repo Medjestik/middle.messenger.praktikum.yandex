@@ -3,39 +3,40 @@
     <div class='chat__info'>
       <div class='chat__user'>
         {{{avatar}}}
-        <h2 class='chat__user-name'>{{ user.displayName }}</h2>
+        <h2 class='chat__user-name'>{{displayName}}</h2>
       </div>
       {{{profileButton}}}
     </div>
     {{{search}}}
   </header>
   <nav class='chat__nav'>
-    <ul class='chat__list'>
-      {{{chats}}}
-    </ul>
+    {{{chatList}}}
   </nav>
 </div>
 <div class='chat__main'>
   <div class='chat__main-header'>
+    {{{chatMenu}}}
     {{#if isShowChat}}
       <div class='chat__user'>
         {{{chatAvatar}}}
-        <h3 class='chat__user-name'>{{currentChat.name}}</h3>
+        <h3 class='chat__user-name'>{{currentChat.title}}</h3>
       </div>
     {{else}}
       <div></div>
     {{/if}}
+
     {{{menuButton}}}
   </div>
-  <div class='chat__messages'>
+  <div class='chat__messages scroll'>
     {{#if isShowChat}}
-      <span class='chat__main-text chat__main-text_type_empty'>Список сообщений..</span>
+      {{{messageList}}}
     {{else}}
-      <img class='chat__img' src={{image}} alt='Изображение чата'>
+      <img class='chat__img' src={{stubImage}} alt='Изображение чата'>
     {{/if}}
   </div>
   <div class='chat__main-footer'>
     {{#if isShowChat}}
+      {{{attachMenu}}}
       {{{attachButton}}}
       {{{chatForm}}}
     {{else}}
@@ -43,3 +44,21 @@
     {{/if}}
   </div>
 </div>
+{{#if isShowCreateChatPopup}}
+  {{{createChatPopup}}}
+{{/if}}
+{{#if isShowRemoveChatPopup}}
+  {{{removeChatPopup}}}
+{{/if}}
+{{#if isShowChangeAvatarPopup}}
+  {{{changeAvatarPopup}}}
+{{/if}}
+{{#if isShowViewChatUsersPopup}}
+  {{{viewUsersPopup}}}
+{{/if}}
+{{#if isShowAddUsersPopup}}
+  {{{addUsersPopup}}}
+{{/if}}
+{{#if isShowRemoveUsersPopup}}
+  {{{removeUsersPopup}}}
+{{/if}}

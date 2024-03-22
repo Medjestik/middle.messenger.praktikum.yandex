@@ -1,7 +1,9 @@
 {{#if isValid}}
-  <img class='avatar__img' src={{ url }} alt='Аватар'>
+  <img class='avatar__img' src={{ avatarLink }} alt='Аватар'>
 {{else}}
   <div class='avatar-stub'>
-    <div class='avatar-stub__icon'></div>
+    {{#if isEdit}}
+      <div class='avatar-stub__icon'></div>
+    {{/if}}
   </div>
 {{/if}}
