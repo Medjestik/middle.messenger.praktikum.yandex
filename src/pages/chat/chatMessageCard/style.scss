@@ -1,0 +1,32 @@
+.chat-message {
+  margin: 0 auto 20px 0;
+  padding:  8px 44px 8px 12px;
+  max-width: 80%;
+  width: fit-content;
+  position: relative;
+  background-color: var(--background-element-color);
+  border-radius: var(--border-radius);
+
+  &_status_owner {
+    background-color: rgba(131 122 234 / 10%);
+    margin: 0 0 20px auto;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
+    color: var(--title-color)
+  }
+
+  &__time {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: normal;
+    color: var(--subtitle-color)
+  }
+}

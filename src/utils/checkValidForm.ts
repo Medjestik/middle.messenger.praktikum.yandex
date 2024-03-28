@@ -11,13 +11,20 @@ function checkValidForm(formObject: { [key: string]: FormDataEntryValue }, field
           if (field.validation !== undefined) {
             let isValidField = true;
             if (field.name === 'password_repeat') {
-              isValidField = checkValidInput(value, field.validation.pattern) && (value === formObject.password);
+              isValidField = field.validation.pattern ? checkValidInput(value, field.validation.pattern) && (value === formObject.password) : true;
+            } else if (field.name === 'avatar') {
+              isValidField = field.validation.pattern ? checkValidInput(value, field.validation.pattern) : true;
             } else {
-              isValidField = checkValidInput(value, field.validation.pattern);
+              isValidField = field.validation.pattern ? checkValidInput(value, field.validation.pattern) : true;
             }
             if (!isValidField) {
               isValidForm = false;
             }
+          }
+        } else if (field.name === 'avatar') {
+          const isValidAvatar = value && value.type.startsWith('image/');
+          if (!isValidAvatar) {
+            isValidForm = false;
           }
         }
       }

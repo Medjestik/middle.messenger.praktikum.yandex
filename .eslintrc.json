@@ -5,7 +5,6 @@
   "rules": {
     "max-len": [2, 200],
     "@typescript-eslint/no-unused-vars": 2,
-    "no-shadow": ["error", { "allow": ["METHOD"] }],
     "class-methods-use-this": "off",
     "no-undef": "off",
     "no-underscore-dangle": "off",
@@ -13,6 +12,10 @@
     "react/prop-types": "off",
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "off",
+    "no-use-before-define": "off",
+    "no-shadow": "off",
+    "no-restricted-syntax": "off",
+    "default-param-last": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

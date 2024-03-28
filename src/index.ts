@@ -1,47 +1,73 @@
 import './styles/style.scss';
-import RenderDOM from './services/RenderDOM';
-import Main from './pages/main/index';
 import Registration from './pages/registration/index';
 import Login from './pages/login/index';
-import Chat from './pages/chat/index';
-import Profile from './pages/profile/index';
-import Edit from './pages/edit/index';
+import { ChatConnect } from './pages/chat';
+import { ProfileConnect } from './pages/profile';
 import NotFoundPage from './pages/404/index';
 import InternalErrorPage from './pages/500/index';
+import router from './router';
+import Store from './services/Store';
+import AuthController from './controllers/AuthController';
+import ChatController from './controllers/ChatController';
 
-const appElement = document.querySelector('.app');
-
-const userContext = {
-  displayName: 'Ivan',
-  avatar: 'https://img.razrisyika.ru/kart/95/1200/377029-magistr-yoda-37.jpg',
+const RouterPath = {
+  login: '/',
+  registration: '/sign-up',
+  chat: '/messenger',
+  profile: '/settings',
+  notFound: '/404',
+  internalError: '/500',
 };
 
-if (appElement) {
-  switch (window.location.pathname) {
-    case '/registration':
-      RenderDOM('.app', new Registration({}));
-      break;
-    case '/login':
-      RenderDOM('.app', new Login({}));
-      break;
-    case '/chat':
-      RenderDOM('.app', new Chat({ user: userContext }));
-      break;
-    case '/profile':
-      RenderDOM('.app', new Profile({ user: userContext }));
-      break;
-    case '/edit':
-      RenderDOM('.app', new Edit({}));
-      break;
-    case '/404':
-      RenderDOM('.app', new NotFoundPage({}));
-      break;
-    case '/500':
-      RenderDOM('.app', new InternalErrorPage({}));
-      break;
-    default:
-      RenderDOM('.app', new Main({}));
+window.addEventListener('DOMContentLoaded', async () => {
+  router
+    .use(RouterPath.login, Login)
+    .use(RouterPath.registration, Registration)
+    .use(RouterPath.chat, ChatConnect)
+    .use(RouterPath.profile, ProfileConnect)
+    .use(RouterPath.notFound, NotFoundPage)
+    .use(RouterPath.internalError, InternalErrorPage);
+
+  let isProtectedRoute = false;
+  let protectedRoutes = [];
+
+  await AuthController.getUser();
+  if (Store.getState().isLoggedIn) {
+    protectedRoutes = [RouterPath.login, RouterPath.registration];
+    if (protectedRoutes.includes(window.location.pathname)) {
+      isProtectedRoute = true;
+    }
+    await ChatController.getChats();
+  } else {
+    protectedRoutes = [RouterPath.chat, RouterPath.profile];
+    if (protectedRoutes.includes(window.location.pathname)) {
+      isProtectedRoute = true;
+    }
   }
-} else {
-  throw new Error('App not found');
-}
+
+  const unprotectedRoutes = [RouterPath.login, RouterPath.registration, RouterPath.notFound];
+  if (!unprotectedRoutes.includes(window.location.pathname)) {
+    isProtectedRoute = true;
+  }
+
+  try {
+    router.start();
+
+    if (!Object.values(RouterPath).includes(window.location.pathname)) {
+      router.go(RouterPath.notFound);
+    } else {
+      if (Store.getState().isLoggedIn && isProtectedRoute) {
+        if (window.location.pathname !== RouterPath.profile) {
+          router.go(RouterPath.chat);
+        }
+      }
+      if (!Store.getState().isLoggedIn && isProtectedRoute) {
+        router.go(RouterPath.login);
+      }
+    }
+  } catch (e) {
+    router.start();
+
+    router.go(RouterPath.internalError);
+  }
+});

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite build && node ./src/server.js",
-    "dev": "vite --open",
+    "dev": "vite --open --force",
     "build": "vite build",
     "preview": "vite preview",
     "types": "tsc --noEmit",

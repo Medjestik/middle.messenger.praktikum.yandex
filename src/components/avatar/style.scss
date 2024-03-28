@@ -21,9 +21,6 @@
 			opacity: .7;
 		}
 
-		&-stub &-stub__icon {
-			display: block;
-		}
 	}
 
   &_size_small {
@@ -59,7 +56,7 @@
 		justify-content: center;
 
 		&__icon {
-			display: none;
+			display: block;
 			width: 44px;
 			height: 44px;
 			background-image: url('../../../static/icons/image.svg');

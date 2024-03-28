@@ -11,6 +11,8 @@ type Options = {
   data?: unknown
   headers?: Record<string, string>
   timeout?: number
+  withCredentials?: boolean
+  responseType?: 'json'
 }
 
 function queryStringify(data: Record<string, any>): string {
@@ -31,14 +33,20 @@ class HTTPTransport {
 
   put: HTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHOD.PUT });
 
-  delete: HTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHOD.PUT });
+  delete: HTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHOD.DELETE });
+
+  constructor(private apiUrl: string) {
+    this.apiUrl = apiUrl;
+  }
 
   request = (url: string, options: Options) => {
     const {
       headers = {},
       method,
       data,
-      timeout = 5000,
+      timeout = 60000,
+      withCredentials = true,
+      responseType = 'json',
     } = options;
 
     return new Promise((resolve, reject) => {
@@ -48,8 +56,8 @@ class HTTPTransport {
       xhr.open(
         method,
         isGet && !!data
-          ? `${url}${queryStringify(data)}`
-          : url,
+          ? `${this.apiUrl}${url}${queryStringify(data)}`
+          : `${this.apiUrl}${url}`,
       );
 
       Object.keys(headers).forEach((key) => {
@@ -57,17 +65,26 @@ class HTTPTransport {
       });
 
       xhr.onload = () => {
-        resolve(xhr);
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve(xhr.response);
+        } else {
+          reject(xhr.response);
+        }
       };
 
       xhr.onabort = reject;
       xhr.onerror = reject;
       xhr.timeout = timeout;
+      xhr.withCredentials = withCredentials;
+      xhr.responseType = responseType;
       xhr.ontimeout = reject;
 
       if (method === METHOD.GET || !data) {
         xhr.send();
+      } else if (data instanceof FormData) {
+        xhr.send(data);
       } else {
+        xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify(data));
       }
     });
