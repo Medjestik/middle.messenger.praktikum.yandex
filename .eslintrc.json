@@ -16,6 +16,7 @@
     "no-shadow": "off",
     "no-restricted-syntax": "off",
     "default-param-last": "off",
+    "no-unused-expressions": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -33,7 +34,7 @@
     },
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".js", ".jsx", ".ts", ".test.ts", ".tsx"]
       }
     }
   }
