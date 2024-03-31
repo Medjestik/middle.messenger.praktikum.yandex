@@ -1,7 +1,7 @@
-import Component from '../../../../../services/Component';
+import Component from '../../../../../services/Component.ts';
 import template from './template.hbs?raw';
-import { IPopupUserItem } from '../interface';
-import Avatar from '../../../../avatar';
+import { IPopupUserItem } from '../interface.ts';
+import Avatar from '../../../../avatar/index.ts';
 
 export default class PopupUserItem extends Component {
   constructor(props: IPopupUserItem) {

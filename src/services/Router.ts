@@ -1,5 +1,5 @@
-import Route from './Route';
-import Component from './Component';
+import Route from './Route.ts';
+import Component from './Component.ts';
 
 function isEqual(lhs: string, rhs: string) {
   return lhs === rhs;

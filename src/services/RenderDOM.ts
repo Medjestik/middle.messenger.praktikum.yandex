@@ -1,4 +1,4 @@
-import Component from './Component';
+import Component from './Component.ts';
 
 function RenderDOM(query: string, block: Component) {
   const root = document.querySelector(query) as HTMLElement;

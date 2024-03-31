@@ -1,7 +1,7 @@
-import HTTPTransport from '../services/HTTPTransport';
-import BaseAPI from '../services/BaseApi';
-import BaseUrlApi from '../config/config';
-import { IProfileUserData, IProfileUserPassword, IProfileSearchUsers } from '../interfaces/IProfileData';
+import HTTPTransport from '../services/HTTPTransport.ts';
+import BaseAPI from '../services/BaseApi.ts';
+import BaseUrlApi from '../config/config.ts';
+import { IProfileUserData, IProfileUserPassword, IProfileSearchUsers } from '../interfaces/IProfileData.ts';
 
 const profileAPIInstance = new HTTPTransport(`${BaseUrlApi}/user`);
 

@@ -1,12 +1,12 @@
-import HTTPTransport from '../services/HTTPTransport';
-import BaseAPI from '../services/BaseApi';
-import BaseUrlApi from '../config/config';
+import HTTPTransport from '../services/HTTPTransport.ts';
+import BaseAPI from '../services/BaseApi.ts';
+import BaseUrlApi from '../config/config.ts';
 import {
   IChatCreateNew,
   IChatRemove,
   IChatAddUsers,
   IChatRemoveUsers,
-} from '../interfaces/IChatData';
+} from '../interfaces/IChatData.ts';
 
 const chatsAPIInstance = new HTTPTransport(`${BaseUrlApi}/chats`);
 

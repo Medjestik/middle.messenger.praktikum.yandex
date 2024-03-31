@@ -1,6 +1,6 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
-import IProfileField from './interface';
+import IProfileField from './interface.ts';
 
 export default class ProfileField extends Component {
   constructor(props: IProfileField) {

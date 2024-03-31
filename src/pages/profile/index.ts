@@ -1,17 +1,17 @@
-import Component from '../../services/Component';
+import Component from '../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import { IUser } from '../../interfaces/IUser';
-import ProfileBtnBack from './profileBtnBack';
-import Avatar from '../../components/avatar/index';
-import ProfileField from './profileField/index';
-import EditUserDataPopup from '../../components/popup/editUserDataPopup';
-import ChangeUserPasswordPopup from '../../components/popup/changeUserPasswordPopup';
-import ChangeUserAvatarPopup from '../../components/popup/changeUserAvatarPopup';
-import AuthController from '../../controllers/AuthController';
-import router from '../../router';
-import connect from '../../utils/connect';
-import Indexed from '../../types/indexed';
+import { IUser } from '../../interfaces/IUser.ts';
+import ProfileBtnBack from './profileBtnBack/index.ts';
+import Avatar from '../../components/avatar/index.ts';
+import ProfileField from './profileField/index.ts';
+import EditUserDataPopup from '../../components/popup/editUserDataPopup/index.ts';
+import ChangeUserPasswordPopup from '../../components/popup/changeUserPasswordPopup/index.ts';
+import ChangeUserAvatarPopup from '../../components/popup/changeUserAvatarPopup/index.ts';
+import AuthController from '../../controllers/AuthController.ts';
+import router from '../../router.ts';
+import connect from '../../utils/connect.ts';
+import Indexed from '../../types/indexed.ts';
 
 export class Profile extends Component {
   constructor(tagName: string = 'main', propsAndChildren: Record<string, any>) {

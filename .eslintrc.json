@@ -16,13 +16,7 @@
     "no-shadow": "off",
     "no-restricted-syntax": "off",
     "default-param-last": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never"
-      }
-    ]
+    "no-unused-expressions": "off"
   },
   "env": {
     "browser": true
@@ -33,7 +27,7 @@
     },
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".js", ".jsx", ".ts", ".test.ts", ".tsx"]
       }
     }
   }

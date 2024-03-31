@@ -1,9 +1,9 @@
-import Component from '../../services/Component';
+import Component from '../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import ErrorPage from '../../components/errorPage/index';
+import ErrorPage from '../../components/errorPage/index.ts';
 import img from '../../images/404.svg';
-import Store from '../../services/Store';
+import Store from '../../services/Store.ts';
 
 export default class NotFoundPage extends Component {
   constructor(tagName: string = 'main', propsAndChildren = {}) {

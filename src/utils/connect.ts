@@ -1,7 +1,7 @@
-import Component from '../services/Component';
-import Store, { StoreEvents } from '../services/Store';
-import isEqual from './isEqual';
-import Indexed from '../types/indexed';
+import Component from '../services/Component.ts';
+import Store, { StoreEvents } from '../services/Store.ts';
+import isEqual from './isEqual.ts';
+import Indexed from '../types/indexed.ts';
 
 export default function connect(mapStateToProps: (state: Indexed) => Indexed) {
   return function (Block: typeof Component) : typeof Component {

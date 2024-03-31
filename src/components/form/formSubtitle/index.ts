@@ -1,6 +1,6 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
-import IFormSubtitle from './interface';
+import IFormSubtitle from './interface.ts';
 
 export default class FormSubtitle extends Component {
   constructor(props: IFormSubtitle) {

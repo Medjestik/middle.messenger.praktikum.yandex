@@ -1,8 +1,8 @@
-import Component from '../../services/Component';
+import Component from '../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import ILink from './interface';
-import router from '../../router';
+import ILink from './interface.ts';
+import router from '../../router.ts';
 
 export default class Link extends Component {
   constructor(props: ILink) {

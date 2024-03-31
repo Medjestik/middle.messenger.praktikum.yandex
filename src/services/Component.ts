@@ -1,6 +1,6 @@
 import Handlebars from 'handlebars';
 import { v4 as makeUUID } from 'uuid';
-import EventBus from './EventBus';
+import EventBus from './EventBus.ts';
 
 export type Props = Record<string, any>;
 
@@ -61,20 +61,21 @@ class Component {
   }
 
   private _render() {
-    const block: unknown = this.render();
+    const block = this.render();
+    this._removeEvents();
 
-    if (block instanceof Node) {
-      this._removeEvents();
-      if (this._element) {
-        this._element.innerHTML = '';
-        this._element.appendChild(block);
-      }
-      this._addEvents();
-      this._addAttribute();
+    if (this._element) {
+      this._element.innerHTML = '';
+      this._element.appendChild(block);
     }
+
+    this._addEvents();
+    this._addAttribute();
   }
 
-  render() {}
+  protected render(): DocumentFragment {
+    return new DocumentFragment();
+  }
 
   private _addEvents() {
     const { events = {} } = this.props;
@@ -124,7 +125,7 @@ class Component {
   }
 
   compile(template: string, props: Props) {
-    const propsAndStubs = { ...props };
+    const propsAndStubs = { ...props, ...this.props };
 
     Object.entries(this.children).forEach(([key, child]) => {
       propsAndStubs[key] = `<div data-uuid="${child._id}"></div>`;

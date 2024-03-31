@@ -1,13 +1,13 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
 import '../style.scss';
-import IPopup from '../interface';
-import Form from '../../form';
-import ProfileController from '../../../controllers/ProfileController';
-import ChatController from '../../../controllers/ChatController';
-import PopupSearch from '../components/popupSearch';
-import PopupUserList from '../components/popupUserList';
-import { IUser } from '../../../interfaces/IUser';
+import IPopup from '../interface.ts';
+import Form from '../../form/index.ts';
+import ProfileController from '../../../controllers/ProfileController.ts';
+import ChatController from '../../../controllers/ChatController.ts';
+import PopupSearch from '../components/popupSearch/index.ts';
+import PopupUserList from '../components/popupUserList/index.ts';
+import { IUser } from '../../../interfaces/IUser.ts';
 
 export default class АddUsersToChatPopup extends Component {
   private onClose: () => void;

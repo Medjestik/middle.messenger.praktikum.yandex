@@ -1,6 +1,6 @@
-import ProfileApi from '../api/profile-api';
-import { IProfileUserData, IProfileUserPassword, IProfileSearchUsers } from '../interfaces/IProfileData';
-import Store from '../services/Store';
+import ProfileApi from '../api/profile-api.ts';
+import { IProfileUserData, IProfileUserPassword, IProfileSearchUsers } from '../interfaces/IProfileData.ts';
+import Store from '../services/Store.ts';
 
 class ProfileController {
   public changeUserData(data: IProfileUserData) {

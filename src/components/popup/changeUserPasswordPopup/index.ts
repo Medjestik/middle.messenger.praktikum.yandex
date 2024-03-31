@@ -1,10 +1,10 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
 import '../style.scss';
-import IPopup from '../interface';
-import Form from '../../form';
-import ProfileController from '../../../controllers/ProfileController';
-import { IProfileUserPassword } from '../../../interfaces/IProfileData';
+import IPopup from '../interface.ts';
+import Form from '../../form/index.ts';
+import ProfileController from '../../../controllers/ProfileController.ts';
+import { IProfileUserPassword } from '../../../interfaces/IProfileData.ts';
 
 export default class ChangeUserPasswordPopup extends Component {
   private onClose: () => void;

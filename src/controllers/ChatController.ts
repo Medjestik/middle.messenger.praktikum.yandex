@@ -1,14 +1,14 @@
-import ChatApi from '../api/chat-api';
-import Store from '../services/Store';
-import { IUser } from '../interfaces/IUser';
-import { IChat } from '../interfaces/IChat';
+import ChatApi from '../api/chat-api.ts';
+import Store from '../services/Store.ts';
+import { IUser } from '../interfaces/IUser.ts';
+import { IChat } from '../interfaces/IChat.ts';
 import {
   IChatCreateNew,
   IChatRemove,
   IChatAddUsers,
   IChatRemoveUsers,
-} from '../interfaces/IChatData';
-import MessageController from './MessageController';
+} from '../interfaces/IChatData.ts';
+import MessageController from './MessageController.ts';
 
 class ChatController {
   public async getChats() {

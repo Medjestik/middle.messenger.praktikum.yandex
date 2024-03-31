@@ -1,7 +1,7 @@
-import IFormField from './formField/interface';
-import IFormButton from './formButton/interface';
-import ILink from '../link/interface';
-import IFormError from './formError/interface';
+import IFormField from './formField/interface.ts';
+import IFormButton from './formButton/interface.ts';
+import ILink from '../link/interface.ts';
+import IFormError from './formError/interface.ts';
 
 interface IForm {
   name?: string,

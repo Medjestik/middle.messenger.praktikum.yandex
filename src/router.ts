@@ -1,4 +1,4 @@
-import Router from './services/Router';
+import Router from './services/Router.ts';
 
 const router = new Router('.app');
 

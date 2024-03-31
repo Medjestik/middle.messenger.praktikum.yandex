@@ -1,10 +1,10 @@
-import Component from '../../services/Component';
+import Component from '../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import data from './data';
-import AuthController from '../../controllers/AuthController';
-import { IAuthLogin } from '../../interfaces/IAuthData';
-import Form from '../../components/form/index';
+import data from './data.ts';
+import AuthController from '../../controllers/AuthController.ts';
+import { IAuthLogin } from '../../interfaces/IAuthData.ts';
+import Form from '../../components/form/index.ts';
 
 export default class Login extends Component {
   constructor(tagName: string = 'main', propsAndChildren = {}) {

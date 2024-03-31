@@ -1,8 +1,8 @@
-import Component from '../../../../services/Component';
+import Component from '../../../../services/Component.ts';
 import template from './template.hbs?raw';
-import PopupSearchInput from './popupSearchInput';
-import PopupSearchBtn from './popupSearchBtn';
-import { IPopupSearch } from './interface';
+import PopupSearchInput from './popupSearchInput/index.ts';
+import PopupSearchBtn from './popupSearchBtn/index.ts';
+import { IPopupSearch } from './interface.ts';
 
 export default class PopupSearch extends Component {
   private inputValue: string = '';

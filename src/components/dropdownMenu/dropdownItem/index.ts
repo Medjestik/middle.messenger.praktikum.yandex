@@ -1,7 +1,7 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
 import '../style.scss';
-import IDropdownItem from './interface';
+import IDropdownItem from './interface.ts';
 
 export default class DropdownItem extends Component {
   constructor(props: IDropdownItem) {

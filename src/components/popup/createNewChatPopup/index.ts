@@ -1,10 +1,10 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
 import '../style.scss';
-import IPopup from '../interface';
-import Form from '../../form';
-import ChatController from '../../../controllers/ChatController';
-import { IChatCreateNew } from '../../../interfaces/IChatData';
+import IPopup from '../interface.ts';
+import Form from '../../form/index.ts';
+import ChatController from '../../../controllers/ChatController.ts';
+import { IChatCreateNew } from '../../../interfaces/IChatData.ts';
 
 export default class CreateNewChatPopup extends Component {
   private onClose: () => void;

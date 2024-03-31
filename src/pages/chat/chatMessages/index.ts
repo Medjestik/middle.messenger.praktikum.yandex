@@ -1,12 +1,12 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import { IMessage } from '../../../interfaces/IMessage';
-import ChatMessageCard from '../chatMessageCard';
-import diffArrays from '../../../utils/diffArrays';
-import convertDate from '../../../utils/convertDate';
-import Indexed from '../../../types/indexed';
-import connect from '../../../utils/connect';
+import { IMessage } from '../../../interfaces/IMessage.ts';
+import ChatMessageCard from '../chatMessageCard/index.ts';
+import diffArrays from '../../../utils/diffArrays.ts';
+import convertDate from '../../../utils/convertDate.ts';
+import Indexed from '../../../types/indexed.ts';
+import connect from '../../../utils/connect.ts';
 
 export class ChatMessages extends Component {
   constructor(tagName: string = 'div', props: Record<string, any>) {
