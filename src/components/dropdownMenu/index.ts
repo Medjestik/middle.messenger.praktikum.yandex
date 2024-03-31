@@ -1,8 +1,8 @@
-import Component from '../../services/Component';
+import Component from '../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import IDropdownMenu from './interface';
-import DropdownItem from './dropdownItem';
+import IDropdownMenu from './interface.ts';
+import DropdownItem from './dropdownItem/index.ts';
 
 interface DropdownOption {
   text: string;

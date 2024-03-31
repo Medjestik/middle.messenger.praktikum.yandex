@@ -16,14 +16,7 @@
     "no-shadow": "off",
     "no-restricted-syntax": "off",
     "default-param-last": "off",
-    "no-unused-expressions": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never"
-      }
-    ]
+    "no-unused-expressions": "off"
   },
   "env": {
     "browser": true

@@ -1,8 +1,8 @@
-import EventBus from './EventBus';
-import set from '../utils/set';
-import { IUser } from '../interfaces/IUser';
-import { IChat } from '../interfaces/IChat';
-import { IMessage } from '../interfaces/IMessage';
+import EventBus from './EventBus.ts';
+import set from '../utils/set.ts';
+import { IUser } from '../interfaces/IUser.ts';
+import { IChat } from '../interfaces/IChat.ts';
+import { IMessage } from '../interfaces/IMessage.ts';
 
 interface IStore {
   user: IUser

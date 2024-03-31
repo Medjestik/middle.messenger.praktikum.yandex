@@ -1,9 +1,9 @@
-import Component from '../../../../services/Component';
+import Component from '../../../../services/Component.ts';
 import template from './template.hbs?raw';
-import { IPopupUserList } from './interface';
-import PopupUserItem from './popupUserItem';
-import diffArrays from '../../../../utils/diffArrays';
-import { IUser } from '../../../../interfaces/IUser';
+import { IPopupUserList } from './interface.ts';
+import PopupUserItem from './popupUserItem/index.ts';
+import diffArrays from '../../../../utils/diffArrays.ts';
+import { IUser } from '../../../../interfaces/IUser.ts';
 
 export default class PopupUserList extends Component {
   constructor(props: IPopupUserList) {

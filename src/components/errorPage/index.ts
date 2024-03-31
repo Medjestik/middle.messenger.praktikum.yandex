@@ -1,8 +1,8 @@
-import Component from '../../services/Component';
+import Component from '../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import IErrorPage from './interface';
-import Link from '../link/index';
+import IErrorPage from './interface.ts';
+import Link from '../link/index.ts';
 
 export default class ErrorPage extends Component {
   constructor(props: IErrorPage) {

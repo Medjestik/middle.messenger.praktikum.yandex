@@ -1,14 +1,14 @@
 import './styles/style.scss';
-import Registration from './pages/registration/index';
-import Login from './pages/login/index';
-import { ChatConnect } from './pages/chat';
-import { ProfileConnect } from './pages/profile';
-import NotFoundPage from './pages/404/index';
-import InternalErrorPage from './pages/500/index';
-import router from './router';
-import Store from './services/Store';
-import AuthController from './controllers/AuthController';
-import ChatController from './controllers/ChatController';
+import Registration from './pages/registration/index.ts';
+import Login from './pages/login/index.ts';
+import { ChatConnect } from './pages/chat/index.ts';
+import { ProfileConnect } from './pages/profile/index.ts';
+import NotFoundPage from './pages/404/index.ts';
+import InternalErrorPage from './pages/500/index.ts';
+import router from './router.ts';
+import Store from './services/Store.ts';
+import AuthController from './controllers/AuthController.ts';
+import ChatController from './controllers/ChatController.ts';
 
 const RouterPath = {
   login: '/',

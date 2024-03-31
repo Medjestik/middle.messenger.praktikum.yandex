@@ -1,26 +1,26 @@
-import Component from '../../services/Component';
+import Component from '../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import ChatController from '../../controllers/ChatController';
+import ChatController from '../../controllers/ChatController.ts';
 import stubImage from '../../images/chat.svg';
-import Avatar from '../../components/avatar/index';
-import IconButton from '../../components/iconButton/index';
-import DropdownMenu from '../../components/dropdownMenu';
-import Search from '../../components/search/index';
-import ChatList from './chatList';
-import { ChatMessagesConnect } from './chatMessages';
-import ChatForm from './chatForm/index';
-import CreateNewChatPopup from '../../components/popup/createNewChatPopup';
-import RemoveChatPopup from '../../components/popup/removeChatPopup';
-import ChangeChatAvatarPopup from '../../components/popup/changeChatAvatarPopup';
-import ViewChatUsersPopup from '../../components/popup/viewChatUsers';
-import АddUsersToChatPopup from '../../components/popup/addUsersToChatPopup';
-import RemoveUsersFromChatPopup from '../../components/popup/removeUsersFromChat';
-import router from '../../router';
-import isEqual from '../../utils/isEqual';
-import { IChat } from '../../interfaces/IChat';
-import Indexed from '../../types/indexed';
-import connect from '../../utils/connect';
+import Avatar from '../../components/avatar/index.ts';
+import IconButton from '../../components/iconButton/index.ts';
+import DropdownMenu from '../../components/dropdownMenu/index.ts';
+import Search from '../../components/search/index.ts';
+import ChatList from './chatList/index.ts';
+import { ChatMessagesConnect } from './chatMessages/index.ts';
+import ChatForm from './chatForm/index.ts';
+import CreateNewChatPopup from '../../components/popup/createNewChatPopup/index.ts';
+import RemoveChatPopup from '../../components/popup/removeChatPopup/index.ts';
+import ChangeChatAvatarPopup from '../../components/popup/changeChatAvatarPopup/index.ts';
+import ViewChatUsersPopup from '../../components/popup/viewChatUsers/index.ts';
+import АddUsersToChatPopup from '../../components/popup/addUsersToChatPopup/index.ts';
+import RemoveUsersFromChatPopup from '../../components/popup/removeUsersFromChat/index.ts';
+import router from '../../router.ts';
+import isEqual from '../../utils/isEqual.ts';
+import { IChat } from '../../interfaces/IChat.ts';
+import Indexed from '../../types/indexed.ts';
+import connect from '../../utils/connect.ts';
 
 export class Chat extends Component {
   constructor(tagName: string = 'main', propsAndChildren: Record<string, any>) {

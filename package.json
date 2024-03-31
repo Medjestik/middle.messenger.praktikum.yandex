@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "test": "node --inspect --import ./reg.js ./node_modules/mocha/bin/mocha",
+    "test": "node --import ./reg.js ./node_modules/mocha/bin/mocha",
     "start": "vite build && node ./src/server.js",
     "dev": "vite --open --force",
     "build": "vite build",
@@ -12,6 +12,11 @@
     "types": "tsc --noEmit",
     "eslint": "eslint src --ext ts",
     "stylelint": "stylelint \"**/*.scss\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint && npm run stylelint && npm run test"
+    }
   },
   "devDependencies": {
     "@types/chai": "^4.3.14",

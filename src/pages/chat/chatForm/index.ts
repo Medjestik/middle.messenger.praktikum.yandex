@@ -1,10 +1,10 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import IChatForm from './interface';
-import checkValidInput from '../../../utils/checkValidInput';
-import Store from '../../../services/Store';
-import MessageController from '../../../controllers/MessageController';
+import IChatForm from './interface.ts';
+import checkValidInput from '../../../utils/checkValidInput.ts';
+import Store from '../../../services/Store.ts';
+import MessageController from '../../../controllers/MessageController.ts';
 
 export default class ChatForm extends Component {
   constructor(props: IChatForm) {

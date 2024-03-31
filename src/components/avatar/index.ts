@@ -1,8 +1,8 @@
-import Component from '../../services/Component';
+import Component from '../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import IAvatar from './interface';
-import BaseUrlApi from '../../config/config';
+import IAvatar from './interface.ts';
+import BaseUrlApi from '../../config/config.ts';
 
 export default class Avatar extends Component {
   constructor(props: IAvatar) {

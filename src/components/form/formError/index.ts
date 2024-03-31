@@ -1,6 +1,6 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
-import IFormError from './interface';
+import IFormError from './interface.ts';
 
 export default class FormError extends Component {
   constructor(props: IFormError) {

@@ -1,11 +1,11 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
-import IChatList from './interface';
-import ChatCard from '../chatCard';
-import { IChat } from '../../../interfaces/IChat';
-import isEqual from '../../../utils/isEqual';
-import diffArrays from '../../../utils/diffArrays';
-import convertDate from '../../../utils/convertDate';
+import IChatList from './interface.ts';
+import ChatCard from '../chatCard/index.ts';
+import { IChat } from '../../../interfaces/IChat.ts';
+import isEqual from '../../../utils/isEqual.ts';
+import diffArrays from '../../../utils/diffArrays.ts';
+import convertDate from '../../../utils/convertDate.ts';
 
 export default class ChatList extends Component {
   constructor(props: IChatList) {

@@ -1,4 +1,4 @@
-import { IChat } from '../../../interfaces/IChat';
+import { IChat } from '../../../interfaces/IChat.ts';
 
 interface IChatList {
   chats: IChat[]

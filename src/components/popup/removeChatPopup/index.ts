@@ -1,9 +1,9 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
 import '../style.scss';
-import IPopup from '../interface';
-import Form from '../../form';
-import ChatController from '../../../controllers/ChatController';
+import IPopup from '../interface.ts';
+import Form from '../../form/index.ts';
+import ChatController from '../../../controllers/ChatController.ts';
 
 export default class ConfirmRemovePopup extends Component {
   private onClose: () => void;

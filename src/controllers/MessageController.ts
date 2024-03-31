@@ -1,6 +1,6 @@
-import WSTransport, { WSTransportEvents } from '../services/WSTransport';
-import Store from '../services/Store';
-import { IMessage } from '../interfaces/IMessage';
+import WSTransport, { WSTransportEvents } from '../services/WSTransport.ts';
+import Store from '../services/Store.ts';
+import { IMessage } from '../interfaces/IMessage.ts';
 
 class MessagesController {
   private sockets: Map<number, WSTransport> = new Map();

@@ -1,6 +1,6 @@
-import Component from '../../../../../services/Component';
+import Component from '../../../../../services/Component.ts';
 import template from './template.hbs?raw';
-import { IPopupSearchBtn } from '../interface';
+import { IPopupSearchBtn } from '../interface.ts';
 
 export default class PopupSearchBtn extends Component {
   constructor(props: IPopupSearchBtn) {

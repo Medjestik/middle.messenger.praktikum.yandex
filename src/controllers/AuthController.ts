@@ -1,8 +1,8 @@
-import AuthAPI from '../api/auth-api';
-import { IAuthRegistration, IAuthLogin } from '../interfaces/IAuthData';
-import router from '../router';
-import Store from '../services/Store';
-import ChatController from './ChatController';
+import AuthAPI from '../api/auth-api.ts';
+import { IAuthRegistration, IAuthLogin } from '../interfaces/IAuthData.ts';
+import router from '../router.ts';
+import Store from '../services/Store.ts';
+import ChatController from './ChatController.ts';
 
 class AuthController {
   public registration(data: IAuthRegistration) {

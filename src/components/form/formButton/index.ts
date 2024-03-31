@@ -1,6 +1,6 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
-import IFormButton from './interface';
+import IFormButton from './interface.ts';
 
 export default class FormButton extends Component {
   constructor(props: IFormButton) {

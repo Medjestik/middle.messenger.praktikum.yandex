@@ -1,7 +1,7 @@
-import Component from '../../services/Component';
+import Component from '../../services/Component.ts';
 import template from './template.hbs?raw';
 import './style.scss';
-import ISearch from './interface';
+import ISearch from './interface.ts';
 
 export default class Search extends Component {
   constructor(props: ISearch) {

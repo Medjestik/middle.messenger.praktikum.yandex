@@ -1,6 +1,6 @@
-import Component from '../../../services/Component';
+import Component from '../../../services/Component.ts';
 import template from './template.hbs?raw';
-import IProfileBtnBack from './interface';
+import IProfileBtnBack from './interface.ts';
 
 export default class ProfileBtnBack extends Component {
   constructor({ onClick, ...props }: IProfileBtnBack) {

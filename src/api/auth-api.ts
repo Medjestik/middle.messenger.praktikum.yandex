@@ -1,7 +1,7 @@
-import HTTPTransport from '../services/HTTPTransport';
-import BaseAPI from '../services/BaseApi';
-import BaseUrlApi from '../config/config';
-import { IAuthRegistration, IAuthLogin } from '../interfaces/IAuthData';
+import HTTPTransport from '../services/HTTPTransport.ts';
+import BaseAPI from '../services/BaseApi.ts';
+import BaseUrlApi from '../config/config.ts';
+import { IAuthRegistration, IAuthLogin } from '../interfaces/IAuthData.ts';
 
 const authAPIInstance = new HTTPTransport(`${BaseUrlApi}/auth`);
 
